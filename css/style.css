@@ -1,0 +1,120 @@
+:root {
+    --primary: #eca31bda;
+    --primary-darker: #61430bda;
+    --bg: #010101;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: #fff;
+}
+
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 5%; /* 1 rem = relative terhadap 16 pixels */
+    background-color: rgba(1, 1, 1, .8);
+    border-bottom: 1px solid var(--primary-darker);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: .5rem;
+    border-bottom: .1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: .2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(.5);
+}
+
+.navbar .navbar-extra a {
+    color: #fff;
+    margin: 0 .5rem;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+
+
+/* media queries */
+/* laptop */
+@media(max-width:1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* tablet */
+@media(max-width:758px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+    }
+}
+
+/* mobile */
+@media(max-width:450px) {
+    html {
+        font-size: 55%;
+    }
+}
