@@ -78,38 +78,38 @@
                 <p class="menu-card-price">IDR 15K</p>
             </div>
             <div class="menu-card">
-                <img src="img/menu/1.jpg" alt="Coffee Latte">
-                <h3 class="menu-card-title">- Coffee Latte -</h3>
+                <img src="img/menu/2.jpg" alt="Kopi Tubruk">
+                <h3 class="menu-card-title">- Kopi Tubruk -</h3>
+                <p class="menu-card-price">IDR 10K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/3.jpg" alt="Flat White">
+                <h3 class="menu-card-title">- Flat White -</h3>
+                <p class="menu-card-price">IDR 10K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/4.jpg" alt="Macchiato">
+                <h3 class="menu-card-title">- Macchiato -</h3>
                 <p class="menu-card-price">IDR 15K</p>
             </div>
             <div class="menu-card">
-                <img src="img/menu/1.jpg" alt="Coffee Latte">
-                <h3 class="menu-card-title">- Coffee Latte -</h3>
+                <img src="img/menu/5.jpg" alt="Butterscotch Latte">
+                <h3 class="menu-card-title">- Butterscotch Latte -</h3>
+                <p class="menu-card-price">IDR 20K</p>
+            </div>
+            <div class="menu-card">
+                <img src="img/menu/6.jpg" alt="Es Kopi Susu Gula Aren">
+                <h3 class="menu-card-title">- Es Kopi Susu Gula Aren -</h3>
                 <p class="menu-card-price">IDR 15K</p>
             </div>
             <div class="menu-card">
-                <img src="img/menu/1.jpg" alt="Coffee Latte">
-                <h3 class="menu-card-title">- Coffee Latte -</h3>
-                <p class="menu-card-price">IDR 15K</p>
+                <img src="img/menu/7.jpg" alt="Affogato">
+                <h3 class="menu-card-title">- Affogato -</h3>
+                <p class="menu-card-price">IDR 25K</p>
             </div>
             <div class="menu-card">
-                <img src="img/menu/1.jpg" alt="Coffee Latte">
-                <h3 class="menu-card-title">- Coffee Latte -</h3>
-                <p class="menu-card-price">IDR 15K</p>
-            </div>
-            <div class="menu-card">
-                <img src="img/menu/1.jpg" alt="Coffee Latte">
-                <h3 class="menu-card-title">- Coffee Latte -</h3>
-                <p class="menu-card-price">IDR 15K</p>
-            </div>
-            <div class="menu-card">
-                <img src="img/menu/1.jpg" alt="Coffee Latte">
-                <h3 class="menu-card-title">- Coffee Latte -</h3>
-                <p class="menu-card-price">IDR 15K</p>
-            </div>
-            <div class="menu-card">
-                <img src="img/menu/1.jpg" alt="Coffee Latte">
-                <h3 class="menu-card-title">- Coffee Latte -</h3>
+                <img src="img/menu/8.jpg" alt="Matcha Latte">
+                <h3 class="menu-card-title">- Matcha Latte -</h3>
                 <p class="menu-card-price">IDR 15K</p>
             </div>
         </div>
@@ -124,7 +124,22 @@
         <div class="row">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63311.73414157117!2d112.7438997093714!3d-7.355758342759634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7e5d4c4211f67%3A0x6203819cb5b8d19a!2sStarbucks%20-%20Bandara%20Juanda%20T1!5e0!3m2!1sen!2sid!4v1725275236418!5m2!1sen!2sid" class="map" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-            <form action="">
+            <form id="contactForm" 
+                action="https://formsubmit.co/david.santana.1112@gmail.com" 
+                method="POST" 
+                novalidate
+            >
+                <!-- Pengaturan FormSubmit -->
+                <input type="hidden" name="_subject" value="Pesan dari Website Kopi Kenangan Santuy">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_ignore" value="g-recaptcha-response">
+
+                <input type="hidden" name="_autoresponse" value="Terima kasih, pesan Anda sudah terkirim.">
+
+                <!-- ✅ Anti-bot honeypot -->
+                <input type="text" name="_honey" style="display:none">
+
                 <div class="input-group">
                     <i class="fa-lg fa-regular fa-user"></i>
                     <input type="text" name="name" id="name" placeholder="Nama">
@@ -137,6 +152,9 @@
                     <i class="fa-lg fa-solid fa-phone"></i>
                     <input type="text" name="telepon" id="telepon" placeholder="Nomor HP">
                 </div>
+
+                <!-- Google reCAPTCHA -->
+                <div class="g-recaptcha mb-3" data-sitekey="6Ldr3PArAAAAAMfX0Pu0eUWmWABK1hkv6HHOwiP5"></div>
 
                 <button type="submit" class="btn">Kirim Pesan</button>
             </form>
