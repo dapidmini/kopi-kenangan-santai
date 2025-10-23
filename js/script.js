@@ -47,59 +47,86 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // inisialisasi storage untuk cart jika belum ada
-  const cartKey = "cartData";
+  // ==== Inisialisasi Cart ====
+  let cart = JSON.parse(localStorage.getItem("cart")) || {};
 
-  // Muat data dari localStorage
-  let cart = JSON.parse(localStorage.getItem(cartKey)) || {};
-
-  // Set nilai qty-input sesuai data tersimpan
-  document.querySelectorAll(".menu-card").forEach((product) => {
-    const id = product.dataset.id;
-    const input = product.querySelector(".qty-input");
-    if (cart[id]) input.value = cart[id].qty;
-  });
-
-  // 🔹 Fungsi untuk menyimpan cart ke localStorage
-  function saveCart() {
-    localStorage.setItem(cartKey, JSON.stringify(cart));
+  function updateCartStorage() {
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 
-  // 🔹 Event listener untuk tombol + dan –
-  document.body.addEventListener('click', e => {
-    const btn = e.target.closest('button');
-    if (!btn || (!btn.classList.contains('btn-plus') && !btn.classList.contains('btn-minus'))) return;
+  // ==== Event Handling untuk tombol + dan - ====
+  document.querySelectorAll(".menu-card").forEach((product) => {
+    const id = product.dataset.id;
+    const name = product.dataset.name;
+    const harga = parseInt(product.dataset.harga);
+    console.log("Inisialisasi produk:", id, name, harga);
+    const minusBtn = product.querySelector(".btn-minus");
+    const plusBtn = product.querySelector(".btn-plus");
+    const qtyInput = product.querySelector(".qty-input");
 
-    e.preventDefault();
+    // Load qty awal dari localStorage
+    if (cart[id]) qtyInput.value = cart[id].qty;
 
-    const card = btn.closest('.menu-card');
-    const id = card.dataset.id;
-    const name = card.dataset.name;
-    const input = card.querySelector('.qty-input');
+    plusBtn.addEventListener("click", () => {
+      const newQty = parseInt(qtyInput.value) + 1;
+      qtyInput.value = newQty;
+      console.log("Menambah qty produk:", id, newQty);
+      cart[id] = { name, harga, qty: newQty };
+      updateCartStorage();
+    });
 
-    let qty = parseInt(input.value) || 0;
-    if (btn.classList.contains('btn-plus')) qty++;
-    else if (btn.classList.contains('btn-minus')) qty = Math.max(0, qty - 1);
+    minusBtn.addEventListener("click", () => {
+      let newQty = parseInt(qtyInput.value) - 1;
+      if (newQty < 0) newQty = 0;
+      qtyInput.value = newQty;
 
-    input.value = qty;
+      if (newQty === 0) delete cart[id];
+      else cart[id] = { name, harga, qty: newQty };
 
-    // Simpan ke cart
-    cart[id] = { name, qty };
-    saveCart();
-  });
-
-  // 🔹 Validasi input manual agar hanya angka
-  document.querySelectorAll('.qty-input').forEach(input => {
-    input.addEventListener('input', e => {
-      e.target.value = e.target.value.replace(/[^0-9]/g, '');
-      const qty = parseInt(e.target.value) || 0;
-      const card = e.target.closest('.menu-card');
-      const id = card.dataset.id;
-      const name = card.dataset.name;
-
-      cart[id] = { name, qty };
-      saveCart();
+      updateCartStorage();
     });
   });
 
+  // ==== Menampilkan isi Cart ====
+  const viewCartBtn = document.getElementById("viewCartBtn");
+  const cartPanel = document.getElementById("cartPanel");
+  const closeCart = document.getElementById("closeCart");
+  const cartItems = document.getElementById("cartItems");
+  const cartTotal = document.getElementById("cartTotal");
+
+  function renderCart() {
+    cartItems.innerHTML = "";
+    let total = 0;
+
+    Object.keys(cart).forEach((id) => {
+      const item = cart[id];
+      const subtotal = item.harga * item.qty;
+      total += subtotal;
+      const div = document.createElement("div");
+      div.classList.add("cart-item");
+      console.log("Cart item:", item);
+      div.innerHTML = `
+      <strong>${item.name}</strong><br>
+      Qty: ${
+        item.qty
+      } × Rp${item.harga.toLocaleString()} = <b>Rp${subtotal.toLocaleString()}</b>
+    `;
+      cartItems.appendChild(div);
+    });
+
+    console.log("Total cart value:", total, cartTotal);
+
+    cartTotal.textContent =
+      total > 0 ? "Total: Rp" + total.toLocaleString() : "Keranjang kosong";
+  }
+
+  viewCartBtn.addEventListener("click", () => {
+    console.log("Klik tombol view cart");
+    renderCart();
+    cartPanel.classList.add("active");
+  });
+
+  closeCart.addEventListener("click", () => {
+    cartPanel.classList.remove("active");
+  });
 });

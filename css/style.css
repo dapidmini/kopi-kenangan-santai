@@ -347,6 +347,64 @@ input::placeholder {
     background-color: #1e7e34;
   }
 
+  /* Tombol cart mengambang */
+  #viewCartBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* Panel cart slide-in */
+  #cartPanel {
+    color: #0f0f0f;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -4px 0 8px rgba(0,0,0,0.2);
+    transition: right 0.4s ease;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 10000;
+  }
+
+  #cartPanel.active {
+    right: 0;
+  }
+
+  #cartPanel h2 {
+    margin-top: 0;
+  }
+
+  #cartPanel hr {
+    border: none;
+    border-top: 1px solid darkgray;
+    margin: 10px 0;
+  }
+
+  #closeCart {
+    background: none;
+    border: none;
+    font-size: 22px;
+    float: right;
+    cursor: pointer;
+  }
+
+  .cart-item {
+    border-bottom: 1px solid darkgray;
+    padding: 8px 0;
+  }
+
 /* Footer */
 footer {
     background-color: var(--primary);
