@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
 
     <title>Kopi Kenangan Santuy</title>
+    
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
 
     <!-- icons -->
     <script src="https://kit.fontawesome.com/45555aaf05.js" crossorigin="anonymous"></script>
@@ -72,51 +74,91 @@
         <p>Rasakan sensasi unik dari setiap jenis kopi yang kami seduh, dijamin bikin kamu nyaman.</p>
 
         <div class="row">
-            <div class="menu-card">
+            <div class="menu-card" data-id="product-01" data-name="Coffee Latte">
                 <img src="img/menu/1.jpg" alt="Coffee Latte">
                 <h3 class="menu-card-title">- Coffee Latte -</h3>
                 <p class="menu-card-price">IDR 15K</p>
+                <div class="quantity-control mt-2">
+                    <button class="btn btn-minus"><i class="fa fa-minus"></i></button>
+                    <input type="text" name="jumlah[]" id="jml-order-menu-1" class="qty-input" value="0">
+                    <button class="btn btn-plus"><i class="fa fa-plus"></i></button>
+                </div>
             </div>
-            <div class="menu-card">
+            <div class="menu-card" data-id="product-02" data-name="Kopi Tubruk">
                 <img src="img/menu/2.jpg" alt="Kopi Tubruk">
                 <h3 class="menu-card-title">- Kopi Tubruk -</h3>
                 <p class="menu-card-price">IDR 10K</p>
+                <div class="quantity-control mt-2">
+                    <button class="btn btn-minus"><i class="fa fa-minus"></i></button>
+                    <input type="text" name="jumlah[]" id="jml-order-menu-2" class="qty-input" value="0">
+                    <button class="btn btn-plus"><i class="fa fa-plus"></i></button>
+                </div>
             </div>
-            <div class="menu-card">
+            <div class="menu-card" data-id="product-03" data-name="Flat White">
                 <img src="img/menu/3.jpg" alt="Flat White">
                 <h3 class="menu-card-title">- Flat White -</h3>
                 <p class="menu-card-price">IDR 10K</p>
+                <div class="quantity-control mt-2">
+                    <button class="btn btn-minus"><i class="fa fa-minus"></i></button>
+                    <input type="text" name="jumlah[]" id="jml-order-menu-3" class="qty-input" value="0">
+                    <button class="btn btn-plus"><i class="fa fa-plus"></i></button>
+                </div>
             </div>
-            <div class="menu-card">
+            <div class="menu-card" data-id="product-04" data-name="Macchiato">
                 <img src="img/menu/4.jpg" alt="Macchiato">
                 <h3 class="menu-card-title">- Macchiato -</h3>
                 <p class="menu-card-price">IDR 15K</p>
+                <div class="quantity-control mt-2">
+                    <button class="btn btn-minus"><i class="fa fa-minus"></i></button>
+                    <input type="text" name="jumlah[]" id="jml-order-menu-4" class="qty-input" value="0">
+                    <button class="btn btn-plus"><i class="fa fa-plus"></i></button>
+                </div>
             </div>
-            <div class="menu-card">
+            <div class="menu-card" data-id="product-05" data-name="Butterscotch Latte">
                 <img src="img/menu/5.jpg" alt="Butterscotch Latte">
                 <h3 class="menu-card-title">- Butterscotch Latte -</h3>
                 <p class="menu-card-price">IDR 20K</p>
+                <div class="quantity-control mt-2">
+                    <button class="btn btn-minus"><i class="fa fa-minus"></i></button>
+                    <input type="text" name="jumlah[]" id="jml-order-menu-5" class="qty-input" value="0">
+                    <button class="btn btn-plus"><i class="fa fa-plus"></i></button>
+                </div>
             </div>
-            <div class="menu-card">
+            <div class="menu-card" data-id="product-06" data-name="Es Kopi Susu Gula Aren">
                 <img src="img/menu/6.jpg" alt="Es Kopi Susu Gula Aren">
                 <h3 class="menu-card-title">- Es Kopi Susu Gula Aren -</h3>
                 <p class="menu-card-price">IDR 15K</p>
+                <div class="quantity-control mt-2">
+                    <button class="btn btn-minus"><i class="fa fa-minus"></i></button>
+                    <input type="text" name="jumlah[]" id="jml-order-menu-6" class="qty-input" value="0">
+                    <button class="btn btn-plus"><i class="fa fa-plus"></i></button>
+                </div>
             </div>
-            <div class="menu-card">
+            <div class="menu-card" data-id="product-07" data-name="Affogato">
                 <img src="img/menu/7.jpg" alt="Affogato">
                 <h3 class="menu-card-title">- Affogato -</h3>
                 <p class="menu-card-price">IDR 25K</p>
+                <div class="quantity-control mt-2">
+                    <button class="btn btn-minus"><i class="fa fa-minus"></i></button>
+                    <input type="text" name="jumlah[]" id="jml-order-menu-7" class="qty-input" value="0">
+                    <button class="btn btn-plus"><i class="fa fa-plus"></i></button>
+                </div>
             </div>
-            <div class="menu-card">
+            <div class="menu-card" data-id="product-08" data-name="Matcha Latte">
                 <img src="img/menu/8.jpg" alt="Matcha Latte">
                 <h3 class="menu-card-title">- Matcha Latte -</h3>
                 <p class="menu-card-price">IDR 15K</p>
+                <div class="quantity-control mt-2">
+                    <button class="btn btn-minus"><i class="fa fa-minus"></i></button>
+                    <input type="text" name="jumlah[]" id="jml-order-menu-8" class="qty-input" value="0">
+                    <button class="btn btn-plus"><i class="fa fa-plus"></i></button>
+                </div>
             </div>
         </div>
     </section>
     <!-- menu section end -->
 
-    <!-- contact section start -->
+    <!-- contact section  mt-2s>
     <section id="contact" class="contact">
         <h2><span>Kontak</span> Kami</h2>
         <p>Cari tempat nongkrong yang asik dan instagramable? KopiSantuy jawabannya!</p>
@@ -183,6 +225,9 @@
     </footer>
     <!-- footer end -->
 
+    <script src="js/bootstrap.bundle.min.js" async defer></script>
+    
+    <!-- Google reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- custom javascript -->

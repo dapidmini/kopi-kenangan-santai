@@ -285,6 +285,68 @@ input::placeholder {
     cursor: pointer;
 }
 
+  /* Wrapper layout */
+  .quantity-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 180px;
+    margin: 15px auto;
+  }
+
+  /* Input field */
+  .quantity-control input[type="text"] {
+    width: 60px;
+    height: 38px;
+    text-align: center;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .quantity-control input[type="text"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+    outline: none;
+  }
+
+  /* Button base */
+  .quantity-control .btn {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+  }
+
+  /* Hover and active effects */
+  .quantity-control .btn:hover {
+    background-color: #0056b3;
+  }
+  .quantity-control .btn:active {
+    transform: scale(0.95);
+  }
+
+  /* Optional: distinct colors for plus/minus */
+  .quantity-control .btn-minus {
+    background-color: #dc3545;
+  }
+  .quantity-control .btn-minus:hover {
+    background-color: #b02a37;
+  }
+  .quantity-control .btn-plus {
+    background-color: #28a745;
+  }
+  .quantity-control .btn-plus:hover {
+    background-color: #1e7e34;
+  }
+
 /* Footer */
 footer {
     background-color: var(--primary);
