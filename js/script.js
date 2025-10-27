@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const id = product.dataset.id;
     const name = product.dataset.name;
     const harga = parseInt(product.dataset.harga);
-    console.log("Inisialisasi produk:", id, name, harga);
     const minusBtn = product.querySelector(".btn-minus");
     const plusBtn = product.querySelector(".btn-plus");
     const qtyInput = product.querySelector(".qty-input");
@@ -70,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     plusBtn.addEventListener("click", () => {
       const newQty = parseInt(qtyInput.value) + 1;
       qtyInput.value = newQty;
-      console.log("Menambah qty produk:", id, newQty);
       cart[id] = { name, harga, qty: newQty };
       updateCartStorage();
     });
@@ -104,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
       total += subtotal;
       const div = document.createElement("div");
       div.classList.add("cart-item");
-      console.log("Cart item:", item);
       div.innerHTML = `
       <strong>${item.name}</strong><br>
       Qty: ${
@@ -114,14 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
       cartItems.appendChild(div);
     });
 
-    console.log("Total cart value:", total, cartTotal);
-
     cartTotal.textContent =
       total > 0 ? "Total: Rp" + total.toLocaleString() : "Keranjang kosong";
   }
 
   viewCartBtn.addEventListener("click", () => {
-    console.log("Klik tombol view cart");
     renderCart();
     cartPanel.classList.add("active");
   });
